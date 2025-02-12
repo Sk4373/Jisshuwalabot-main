@@ -65,8 +65,12 @@ async def start(client:Client, message):
             key = "third_time_verified"
         else:
 
-        key = "second_time_verified" if await db.is_user_verified(user_id) else "last_verified"
-        current_time = dt.now(tz=ist_timezone)
+        if await db.is_user_verified(user_id):
+    key = "second_time_verified"
+else:
+    key = "last_verified"
+
+current_time = dt.now(tz=ist_timezone)  # Yeh line properly aligned hai
 
         # Check if user is already verified to prevent multiple messages
         previous_verification = await db.get_user_verification_status(user_id)
