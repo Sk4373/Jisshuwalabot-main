@@ -74,8 +74,7 @@ current_time = dt.now(tz=ist_timezone)  # Yeh line properly aligned hai
 
         # Check if user is already verified to prevent multiple messages
         previous_verification = await db.get_user_verification_status(user_id)
-        if previous_verification == key:
-            return  # Stop duplicate verification messages
+        if previous_verification == key:  return  # Stop duplicate verification messages
 
         result = await db.update_notcopy_user(user_id, {key: current_time})
         await db.update_verify_id_info(user_id, verify_id, {"verified": True})
