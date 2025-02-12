@@ -65,10 +65,11 @@ async def start(client:Client, message):
         if await db.user_verified(user_id):
              key = "third_time_verified"
         else:
-        if await db.is_user_verified(user_id):
-             key = "second_time_verified"
-         else:
-             key = "last_verified"
+            if await 
+        db.is_user_verified(user_id):
+                key = "second_time_verified"
+            else:
+                key = "last_verified"
 
 current_time = dt.now(tz=ist_timezone)  # Yeh line properly aligned hai
 
