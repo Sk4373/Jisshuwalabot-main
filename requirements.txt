@@ -10,6 +10,7 @@ wget
 aiofiles 
 ffmpeg 
 requests 
+razorpay
 aiohttp  
 ujson 
 pyshorteners 
