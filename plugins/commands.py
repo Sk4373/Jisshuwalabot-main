@@ -63,9 +63,10 @@ async def start(client:Client, message):
         ist_timezone = pytz.timezone('Asia/Kolkata')
         
         if await db.user_verified(user_id):
-    key = "third_time_verified"
-else:
-    key = "second_time_verified" if await db.is_user_verified(user_id) else key= "last_verified"
+             key = "third_time_verified"
+        else:
+            key = "second_time_verified" if 
+        await db.is_user_verified(user_id) else "first_time_verified"
 
 current_time = dt.now(tz=ist_timezone)  # Yeh line properly aligned hai
 
